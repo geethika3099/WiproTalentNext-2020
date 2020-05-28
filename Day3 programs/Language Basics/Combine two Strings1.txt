@@ -1,0 +1,16 @@
+import java.util.*;
+public class Main {
+		 public static String concatination(String dest, String src) 
+		{ 
+			 return (dest +" technologies "+ src); 
+		} 
+		 public static void main(String[] args) 
+		{ 
+			if (args.length > 0) { 
+				System.out.println(concatination(args[0], args[1])); 
+			}
+			else {
+				System.out.println("no command line arguments");
+			}
+		}
+} 
