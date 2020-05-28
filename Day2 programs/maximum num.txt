@@ -1,0 +1,27 @@
+  
+import java.util.*;
+import java.io.*;
+public class maxnum
+{
+    public static void main(String[]args)
+    {
+        Scanner reader=new Scanner(System.in);
+        System.out.println("Enter the Number Of Array elements:");
+        int num1=reader.nextInt();
+        int arr[]=new int[num1];
+        System.out.println("Enter the array elements:");
+        for(int i=0;i<n1;i++)
+        {
+            arr[i]=u.nextInt();
+        }
+        int max=arr[0];
+        for(int i=0;i<n1;i++)
+        {
+            if(max<arr[i])
+            {
+                max=arr[i];
+            }
+        }
+        System.out.println("Maximum number in the array is " +m);
+    }
+}

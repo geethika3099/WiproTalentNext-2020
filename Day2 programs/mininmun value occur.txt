@@ -1,0 +1,32 @@
+import java.util.*;
+import java.io.*;
+public class MaxValOccur
+{
+    public static void main(String[]args)
+    {
+        Scanner reader=new Scanner(System.in);
+        System.out.println("Enter the Number Of Array elements:");
+        int num1=reader.nextInt();
+        int arr[]=new int[num1];
+        System.out.println("Enter the array elements:");
+        for(int i=0;i<n1;i++)
+        {
+            arr[i]=reader.nextInt();
+        }
+        int m=arr[0];
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            if(m<arr[i])
+            {
+                m=arr[i];
+            }
+            else if(m==arr[i])
+            {
+                count++;
+            }
+        }
+        System.out.println("Maximum number in the array is " +m);
+        System.out.println("Occurence of Maximum Number is " +count);
+    }
+}
