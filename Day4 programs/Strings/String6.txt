@@ -1,0 +1,13 @@
+import java.util.*;
+public class Main{
+public static void main(String[] args) {
+		String str1 = "hi";
+		String str2 = "hello";
+		String output;
+          if (str1.length() < str2.length()) 
+			output = str1 + str2 + str1;
+		else
+			output = str2 + str1+ str2;
+                 System.out.println(output);
+	}
+}
