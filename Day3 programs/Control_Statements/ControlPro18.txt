@@ -1,0 +1,26 @@
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    Scanner reader=new Scanner(System.in);
+    System.out.println("enter number:");
+    int num=reader.nextInt();
+    
+        int rev_int = 0, rem, ori_int;
+
+        ori_int = num;
+
+         
+        while( num != 0 )
+        {
+            rem = num% 10;
+            rev_int = rev_int * 10 + rem;
+            num /= 10;
+        }
+
+        
+        if (ori_int == rev_int)
+            System.out.println(ori_int + " is a palindrome.");
+        else
+            System.out.println(ori_int + " is not a palindrome.");
+    }
+}
