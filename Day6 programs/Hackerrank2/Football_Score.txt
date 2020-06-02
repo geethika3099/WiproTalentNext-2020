@@ -1,0 +1,83 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'counts' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY teamA
+     *  2. INTEGER_ARRAY teamB
+     */
+
+    public static List<Integer> counts(List<Integer> teamA, List<Integer> teamB) {
+    // Write your code here
+    List<Integer> li= new ArrayList();
+        for(Integer k:teamB)
+        {
+            Integer count=0;
+            for(Integer l: teamA)
+            {
+                if(k>=l)
+                {
+                    count++;
+                }
+            }
+
+                li.add(count);
+            }
+
+
+        return li;       
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int teamACount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> teamA = new ArrayList<>();
+
+        for (int i = 0; i < teamACount; i++) {
+            int teamAItem = Integer.parseInt(bufferedReader.readLine().trim());
+            teamA.add(teamAItem);
+        }
+
+        int teamBCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> teamB = new ArrayList<>();
+
+        for (int i = 0; i < teamBCount; i++) {
+            int teamBItem = Integer.parseInt(bufferedReader.readLine().trim());
+            teamB.add(teamBItem);
+        }
+
+        List<Integer> result = Result.counts(teamA, teamB);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}

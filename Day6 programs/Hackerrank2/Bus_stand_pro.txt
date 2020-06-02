@@ -1,0 +1,77 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'kthPerson' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY p
+     *  3. INTEGER_ARRAY q
+     */
+
+    public static List<Integer> kthPerson(int k, List<Integer> p, List<Integer> q) {
+    // Write your code here
+    for(int i:p)
+    {
+            if(p>=q)
+            {
+                return p;
+            }
+    }
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int k = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int pCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> p = new ArrayList<>();
+
+        for (int i = 0; i < pCount; i++) {
+            int pItem = Integer.parseInt(bufferedReader.readLine().trim());
+            p.add(pItem);
+        }
+
+        int qCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> q = new ArrayList<>();
+
+        for (int i = 0; i < qCount; i++) {
+            int qItem = Integer.parseInt(bufferedReader.readLine().trim());
+            q.add(qItem);
+        }
+
+        List<Integer> result = Result.kthPerson(k, p, q);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
