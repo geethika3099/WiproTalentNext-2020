@@ -1,0 +1,70 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'maxShared' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts WEIGHTED_INTEGER_GRAPH friends as parameter.
+     */
+
+    /*
+     * For the weighted graph, <name>:
+     *
+     * 1. The number of nodes is <name>Nodes.
+     * 2. The number of edges is <name>Edges.
+     * 3. An edge exists between <name>From[i] and <name>To[i]. The weight of the edge is <name>Weight[i].
+     *
+     */
+
+    public static int maxShared(int friendsNodes, List<Integer> friendsFrom, List<Integer> friendsTo, List<Integer> friendsWeight) {
+
+for(int i=0;i>0;i++)
+{
+    for(int j=0;j<i;j++)
+    {
+        for(int k:friends_edge)
+    }
+}
+    }
+
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] friendsNodesEdges = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        int friendsNodes = Integer.parseInt(friendsNodesEdges[0]);
+        int friendsEdges = Integer.parseInt(friendsNodesEdges[1]);
+
+        List<Integer> friendsFrom = new ArrayList<>();
+        List<Integer> friendsTo = new ArrayList<>();
+        List<Integer> friendsWeight = new ArrayList<>();
+
+        for (int i = 0; i < friendsEdges; i++) {
+            String[] friendsFromToWeight = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+            friendsFrom.add(Integer.parseInt(friendsFromToWeight[0]));
+            friendsTo.add(Integer.parseInt(friendsFromToWeight[1]));
+            friendsWeight.add(Integer.parseInt(friendsFromToWeight[2]));
+        }
+
+        int result = Result.maxShared(friendsNodes, friendsFrom, friendsTo, friendsWeight);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
