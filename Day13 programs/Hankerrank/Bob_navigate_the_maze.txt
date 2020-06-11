@@ -1,0 +1,65 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'minMoves' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. 2D_INTEGER_ARRAY maze
+     *  2. INTEGER x
+     *  3. INTEGER y
+     */
+
+    public static int minMoves(List<List<Integer>> maze, int x, int y) {
+    // Write your code here
+    int[][] z = new int[n][m];
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int mazeRows = Integer.parseInt(bufferedReader.readLine().trim());
+        int mazeColumns = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<List<Integer>> maze = new ArrayList<>();
+
+        for (int i = 0; i < mazeRows; i++) {
+            String[] mazeRowTempItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+            List<Integer> mazeRowItems = new ArrayList<>();
+
+            for (int j = 0; j < mazeColumns; j++) {
+                int mazeItem = Integer.parseInt(mazeRowTempItems[j]);
+                mazeRowItems.add(mazeItem);
+            }
+
+            maze.add(mazeRowItems);
+        }
+
+        int x = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int y = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int result = Result.minMoves(maze, x, y);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
